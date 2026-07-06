@@ -1580,3 +1580,320 @@ footer {
     transform: translate(0) scale(1);
     filter: blur(0);
 }
+
+/* =============================================
+   DOCTOR PROFILE SECTION
+   ============================================= */
+
+.doctor-profile-card {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 50px;
+}
+
+/* Photo Column */
+.doctor-photo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 100px;
+}
+
+.doctor-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 24px;
+    overflow: visible;
+}
+
+.doctor-photo-frame::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 26px;
+    background: var(--accent-gold-gradient);
+    z-index: 0;
+}
+
+.doctor-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: block;
+    border-radius: 22px;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+    filter: brightness(1.02) contrast(1.02);
+}
+
+.doctor-badge {
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    z-index: 2;
+    background: var(--accent-gold-gradient);
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(212,175,55,0.5);
+    border: 3px solid rgba(255,255,255,0.15);
+}
+
+.doctor-badge-years {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: var(--font-accent);
+    color: var(--primary-dark);
+    line-height: 1;
+}
+
+.doctor-badge-label {
+    font-size: 0.52rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 4px;
+}
+
+.btn-practo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1.5px solid var(--accent-gold);
+    color: var(--accent-gold);
+    font-family: var(--font-accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: var(--transition-smooth);
+    background: transparent;
+}
+
+.btn-practo:hover {
+    background: var(--accent-gold);
+    color: var(--primary-dark);
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+}
+
+/* Info Column */
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.doctor-name {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    color: var(--accent-gold-light);
+    margin-bottom: 6px;
+    line-height: 1.1;
+}
+
+.doctor-degree {
+    font-family: var(--font-accent);
+    font-size: 1rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+}
+
+.doctor-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.doctor-tag {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 50px;
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.02em;
+}
+
+.doctor-bio p {
+    font-size: 1rem;
+    color: var(--text-muted-light);
+    line-height: 1.75;
+}
+
+.doctor-bio strong {
+    color: var(--accent-gold-light);
+}
+
+.doctor-section-label {
+    font-family: var(--font-accent);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.doctor-section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(212, 175, 55, 0.25);
+}
+
+/* Timeline */
+.doctor-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+.doctor-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-gold), transparent);
+}
+
+.timeline-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 24px;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -13px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-gold);
+    border: 2px solid var(--primary-mid);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.timeline-year {
+    font-family: var(--font-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    letter-spacing: 0.04em;
+}
+
+.timeline-content p {
+    font-size: 0.93rem;
+    color: var(--text-muted-light);
+    line-height: 1.6;
+}
+
+.timeline-content em {
+    color: var(--accent-gold-light);
+    font-style: italic;
+}
+
+.timeline-content strong {
+    color: var(--accent-gold-light);
+}
+
+/* Specializations Grid */
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 12px;
+    font-family: var(--font-accent);
+    font-size: 0.83rem;
+    color: var(--text-muted-light);
+    transition: var(--transition-smooth);
+    cursor: default;
+}
+
+.spec-item:hover {
+    background: rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.4);
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+.spec-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .doctor-profile-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .doctor-photo-wrapper {
+        position: static;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .doctor-name {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .spec-grid {
+        grid-template-columns: 1fr;
+    }
+}
